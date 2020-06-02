@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Simple IPFS file Uploader</title>
+  </head>
+
+  <style>
+    .container {
+      padding: 80px;
+      border: solid 1px gray;
+    }
+    #response {
+      width: 320px;
+      margin: 20px 0px;
+      text-align: left;
+    }
+  </style>
+
+  <body>
+
+    <center>
+      <div class="container">
+        <h2>Simple IPFS file uploader via Browser</h2>
+        <p>To use your local IPFS node, change the protocol to "http" and node to "127.0.0.1"
+        <div class="nodeConfig">
+          <p>
+            Protocol (http/https):
+            <input type="text" id="protocolIPFS" value="https">
+          </p>
+          <p>
+            IPFS Node:
+            <input type="text" id="nodeIPFS" value="ipfs.infura.io">
+          </p>
+        </div>
+
+        <input type="file" id="fileElem" multiple accept="*/*" onchange="handleFiles(this.files)">
+        <div>
+          <pre id="response" disabled>Response:</pre>
+        </div>
+      </div>
+    </center>
+
+  </body>
+
+
+  <script type="text/javascript" src="buffer.js"></script>
+  <script type="text/javascript" src="ipfs-http-client.js"></script>
+  <script type="text/javascript" src="ipfs-upload.js"></script>
+
+  </html>
